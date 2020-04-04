@@ -1,0 +1,34 @@
+.header
+  background-color: $dark
+  padding: 24px 0
+  /** отступ сверху **/
+.menu
+  display: flex
+  /** логотип, меню, номер и кнопка расползутся в одну строку **/
+  justify-content: space-between
+  /** элементы расположаться равномерно в границах контейнера **/
+  align-items: center
+  /** относительно друг друга выравниваются по центру **/
+.logo
+  color: $primary
+  /** цвет логотипа **/
+  text-transform: uppercase
+  /** перевод на заглавные буквы **/
+.nav
+  &__item
+    color: $light
+    /** цвет текста **/
+    text-decoration: none
+    /** отключает подчеркивание **/
+    text-transform: uppercase
+    /** перевод на заглавные буквы **/
+    margin-right: 40px
+    /** отступы между элементами меню **/
+.phone
+  color: $primary
+  /** задаем цвет текста для телефона **/
+.contacts
+  &__phone
+    margin-right: 45px
+    /** отступ справа между номером тел и кнопкой **/
+    
