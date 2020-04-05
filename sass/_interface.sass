@@ -7,11 +7,21 @@
   /** скругление кнопки **/
   text-transform: uppercase
   /** перевод букв на заглавные **/
+  &:hover
+    cursor: 
+    /** при наведении стрелка курсора меняется на палец **/
   &--primary
     background-color: $primary
     /** фоновый цвет кнопки **/
     color: $light
     /** цвет текста кнопки **/
+    box-shadow: 0px 5px 15px rgba($primary, 0.2) 
+    /** тень для кнопки **/
+    transition: box-shadow 0.3s
+    /** тень появляется и исчезает с задержкой 0.3 сек **/
+    &:hover
+      box-shadow: none
+      /** при наведении на кнопку тень будет пропадать **/
   &--outline
     border: 1px solid $light
     /** параметры обводки кнопки **/
