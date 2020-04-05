@@ -377,6 +377,46 @@ template {
   margin-right: 45px;
   /** отступ справа между номером тел и кнопкой **/ }
 
+.hero {
+  position: relative;
+  /** для того чтобы блок instagram можно было сделать absolute **/
+  background: #131313 url("../img/hero-bg.jpg") no-repeat center/cover;
+  /** установка картинки в качестве фонового изображения, впереди ставим $dark для подстраховки, если картинка вдург не загрузится, то будет виден текст, no-repeat - исключили повторение картинки, center / cover - расположить картинку по центру на весь экран **/
+  height: 100vh;
+  /** высота блока будет равна 100% высоты экрана с которого мы смотрим этот сайт **/
+  color: #fff;
+  /** цвет текста **/ }
+  .hero__instagram {
+    position: absolute;
+    /** чтобы instagram не вытеснял остальные блоки, при этом родительский элемент должен быть position:relative **/
+    left: 0;
+    top: 0;
+    /** блок instagram будет прижать к верхнему левому углу **/
+    max-width: 80px;
+    /** максимальная ширина блока **/
+    height: 100%;
+    /** высота блока 100% от его родителя **/ }
+  .hero .instagram {
+    display: flex;
+    /** нужно чтобы к ссылке link применилось действие команды transform:rotate а также выравнивание по центру **/
+    justify-content: center;
+    align-items: center;
+    /** выравнивание по центру **/
+    background-color: #131313;
+    /** фоновый цвет для блока instagram **/ }
+    .hero .instagram__link {
+      text-transform: uppercase;
+      /** заглавне буквы **/
+      text-decoration: none;
+      /** убираем нижнее подчеркивание **/
+      color: #E3B873;
+      /** цвет текста **/
+      transform: rotate(90deg);
+      /** поворот элемента на 90 градусов **/ }
+  .hero .title {
+    margin: 0;
+    /** отключили верхний отступ **/ }
+
 body {
   font-family: 'Futura Book', sans-serif;
   font-size: 14px; }
