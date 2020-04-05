@@ -358,6 +358,34 @@ template {
   margin: auto;
   /** контенер находиться по середине **/ }
 
+*, *:before, *:after {
+  box-sizing: border-box; }
+
+/** для всех элементов, а также для всех псевдоэлементов before и всех псевдоэлементов after применяется правило box-sizing: border-box, это правило говорит - не нужно считать высоту с учетом внутреннего отступа (padding) **/
+body {
+  font-family: 'Futura Book', sans-serif;
+  font-size: 14px; }
+
+/** временные св-ва до установки шрифтов **/
+.section-title {
+  text-align: center;
+  /** выровнять заголовок по центру **/
+  text-transform: uppercase;
+  /** заглавные буквы **/
+  font-family: 'Yeseva One', cursive;
+  /** описание псевдоэлементов **/ }
+  .section-title__image {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /** выравнивание псевдоэлементов **/ }
+    .section-title__image::before, .section-title__image::after {
+      content: '';
+      width: 32px;
+      height: 2px;
+      background-color: #E3B873;
+      margin: 0 10px; }
+
 .header {
   position: fixed;
   /** при прокрутке страницы шапка будет фиксирована **/
@@ -418,7 +446,7 @@ template {
   flex-direction: column;
   /** направление элементов **/
   /** position: relative, display: flex, flex-direction: column - в независимости от положения окна, на сколько оно большое, текст будет находиться ровно по середине по горизонтали **/
-  padding-top: 90px;
+  padding-top: 100px;
   /** чтобы шапка на скрывала основной контент hero **/
   background: #131313 url("../img/hero-bg.jpg") no-repeat center/cover;
   /** установка картинки в качестве фонового изображения, впереди ставим $dark для подстраховки, если картинка вдург не загрузится, то будет виден текст, no-repeat - исключили повторение картинки, center / cover - расположить картинку по центру на весь экран **/
@@ -430,6 +458,9 @@ template {
     /** псевдоэлемент - затемнение картинки фона **/
     content: '';
     position: absolute;
+    top: 0;
+    left: 0;
+    /** приклеиваем к верхнему левому краю как и саму картинку **/
     width: 100%;
     height: 100%;
     /** будет занимать всю ширину и высоту родителя **/
@@ -541,12 +572,4 @@ template {
       color: #E3B873;
       /** оформление цвета заголовка **/ }
 
-*, *:before, *:after {
-  box-sizing: border-box; }
-
-/** для всех элементов, а также для всех псевдоэлементов before и всех псевдоэлементов after применяется правило box-sizing: border-box, это правило говорит - не нужно считать высоту с учетом внутреннего отступа (padding) **/
-body {
-  font-family: 'Futura Book', sans-serif;
-  font-size: 14px; }
-
-/** временные св-ва до установки шрифтов **/
+/** здесь мы подключаем файлы sass отвечающие за разные блоки и сегменты сайта **/

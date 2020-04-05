@@ -3,14 +3,9 @@
 @import 'variables'
 @import 'interface'
 @import 'grid'
+@import 'settings'
 @import 'templates/header'
 @import 'templates/hero'
+@import 'templates/control'
 
-*, *:before, *:after
-  box-sizing: border-box
-/** для всех элементов, а также для всех псевдоэлементов before и всех псевдоэлементов after применяется правило box-sizing: border-box, это правило говорит - не нужно считать высоту с учетом внутреннего отступа (padding) **/
-
-body
-  font-family: 'Futura Book', sans-serif
-  font-size: 14px
-/** временные св-ва до установки шрифтов **/ 
+/** здесь мы подключаем файлы sass отвечающие за разные блоки и сегменты сайта **/
