@@ -428,6 +428,10 @@ template {
     margin: 0;
     /** отключили верхний отступ **/ }
 
+*, *:before, *:after {
+  box-sizing: border-box; }
+
+/** для всех элементов, а также для всех псевдоэлементов before и всех псевдоэлементов after применяется правило box-sizing: border-box, это правило говорит - не нужно считать высоту с учетом внутреннего отступа (padding) **/
 body {
   font-family: 'Futura Book', sans-serif;
   font-size: 14px; }
