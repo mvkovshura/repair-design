@@ -333,8 +333,17 @@ template {
     /** фоновый цвет кнопки **/
     color: #fff;
     /** цвет текста кнопки **/ }
+  .button--outline {
+    border: 1px solid #fff;
+    /** параметры обводки кнопки **/
+    background-color: transparent;
+    /** прозрачный фон **/
+    color: #fff;
+    /** цвет текста кнопки **/ }
 
 .container {
+  width: 85%;
+  /** ширина экрана **/
   max-width: 1256px;
   /** максимальная ширина контенера **/
   margin: auto;
@@ -389,6 +398,11 @@ template {
 .hero {
   position: relative;
   /** для того чтобы блок instagram можно было сделать absolute **/
+  display: flex;
+  /** содержимое выровняется по центру **/
+  flex-direction: column;
+  /** направление элементов **/
+  /** position: relative, display: flex, flex-direction: column - в независимости от положения окна, на сколько оно большое, текст будет находиться ровно по середине по горизонтали **/
   padding-top: 100px;
   /** чтобы шапка на скрывала основной контент hero **/
   background: #131313 url("../img/hero-bg.jpg") no-repeat center/cover;
@@ -397,6 +411,14 @@ template {
   /** высота блока будет равна 100% высоты экрана с которого мы смотрим этот сайт **/
   color: #fff;
   /** цвет текста **/ }
+  .hero__content {
+    max-width: 670px;
+    /** максимальная ширина содержимого, чтобы слова переносились на новую строчку **/ }
+  .hero__text {
+    font-size: 22px;
+    /** размер шрифта **/
+    max-width: 500px;
+    /** максимальная ширина для текста с описанием **/ }
   .hero__instagram {
     position: absolute;
     /** чтобы instagram не вытеснял остальные блоки, при этом родительский элемент должен быть position:relative **/
@@ -407,6 +429,28 @@ template {
     /** максимальная ширина блока **/
     height: 100%;
     /** высота блока 100% от его родителя **/ }
+  .hero__scroll-down {
+    position: absolute;
+    /** чтобы можно было позиционировать относительно hero **/
+    display: flex;
+    /** для выравнивания по центру **/
+    align-items: center;
+    justify-content: center;
+    /** выравниваем ссылку по центру **/
+    left: 0;
+    bottom: 0;
+    /** прикоепляем к нижнему левому углу **/
+    min-width: 247px;
+    min-height: 97px;
+    /** минимальная ширина и высота **/
+    background-color: #131313;
+    /** фоновый цвет **/
+    text-transform: uppercase;
+    /** заглавне буквы **/
+    color: #fff;
+    /** цвет текста ссылки **/
+    text-decoration: none;
+    /** убираем нижнее подчеркивание **/ }
   .hero .instagram {
     display: flex;
     /** нужно чтобы к ссылке link применилось действие команды transform:rotate а также выравнивание по центру **/
@@ -426,7 +470,16 @@ template {
       /** поворот элемента на 90 градусов **/ }
   .hero .title {
     margin: 0;
-    /** отключили верхний отступ **/ }
+    /** отключили верхний отступ **/
+    font-family: 'Yeseva One', cursive;
+    /** подключаем Google шрифт через ссылку **/
+    text-transform: uppercase;
+    /** заглавне буквы **/
+    font-size: 40px;
+    /** размер шрифта **/ }
+    .hero .title--primary {
+      color: #E3B873;
+      /** оформление цвета заголовка **/ }
 
 *, *:before, *:after {
   box-sizing: border-box; }

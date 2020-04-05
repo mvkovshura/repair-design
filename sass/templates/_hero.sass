@@ -1,6 +1,11 @@
 .hero
   position: relative
   /** для того чтобы блок instagram можно было сделать absolute **/
+  display: flex
+  /** содержимое выровняется по центру **/
+  flex-direction: column
+  /** направление элементов **/
+  /** position: relative, display: flex, flex-direction: column - в независимости от положения окна, на сколько оно большое, текст будет находиться ровно по середине по горизонтали **/
   padding-top: 100px
   /** чтобы шапка на скрывала основной контент hero **/
   background: $dark url('../img/hero-bg.jpg') no-repeat center / cover
@@ -9,6 +14,14 @@
   /** высота блока будет равна 100% высоты экрана с которого мы смотрим этот сайт **/
   color: $light
   /** цвет текста **/
+  &__content
+    max-width: 670px
+    /** максимальная ширина содержимого, чтобы слова переносились на новую строчку **/
+  &__text
+    font-size: 22px
+    /** размер шрифта **/
+    max-width: 500px
+    /** максимальная ширина для текста с описанием **/
   &__instagram
     position: absolute
     /** чтобы instagram не вытеснял остальные блоки, при этом родительский элемент должен быть position:relative **/
@@ -19,6 +32,29 @@
     /** максимальная ширина блока **/
     height: 100%
     /** высота блока 100% от его родителя **/
+  &__scroll-down
+    position: absolute
+    /** чтобы можно было позиционировать относительно hero **/
+    display: flex
+    /** для выравнивания по центру **/
+    align-items: center
+    justify-content: center
+    /** выравниваем ссылку по центру **/
+    left: 0
+    bottom: 0
+    /** прикоепляем к нижнему левому углу **/
+    min-width: 247px
+    min-height: 97px
+    /** минимальная ширина и высота **/
+    background-color: $dark
+    /** фоновый цвет **/
+    text-transform: uppercase
+    /** заглавне буквы **/
+    color: $light
+    /** цвет текста ссылки **/
+    text-decoration: none
+    /** убираем нижнее подчеркивание **/
+
   .instagram
     display: flex
     /** нужно чтобы к ссылке link применилось действие команды transform:rotate а также выравнивание по центру **/
@@ -41,4 +77,13 @@
   .title
     margin: 0
     /** отключили верхний отступ **/
+    font-family: 'Yeseva One', cursive
+    /** подключаем Google шрифт через ссылку **/
+    text-transform: uppercase
+    /** заглавне буквы **/
+    font-size: 40px
+    /** размер шрифта **/
+    &--primary
+      color: $primary
+      /** оформление цвета заголовка **/
     
