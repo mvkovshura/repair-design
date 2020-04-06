@@ -31,11 +31,18 @@
     /** ставит все содержимое этого элемента перед псевдоэлементом-картинкой **/
     max-width: 670px
     /** максимальная ширина содержимого, чтобы слова переносились на новую строчку **/
+    margin-left: 60px
+    /** для отступа содержимого блока content от instagram **/
   &__text
     font-size: 22px
     /** размер шрифта **/
+    line-height: 1.4
+    /** межстрочный интервал **/
     max-width: 500px
     /** максимальная ширина для текста с описанием **/
+    margin-top: 20px
+    margin-bottom: 40px
+    /** редакция для per_pix **/
   &__button
     margin-right: 20px
     /** отступ справа **/
@@ -87,53 +94,58 @@
       /** отодвинем слева **/
       
 
-  .instagram
+.instagram
+  display: flex
+  /** нужно чтобы к ссылке link применилось действие команды transform:rotate а также выравнивание по центру **/
+  justify-content: center
+  align-items: center
+  /** выравнивание по центру **/
+  background-color: $dark
+  /** фоновый цвет для блока instagram **/
+  &__link
     display: flex
-    /** нужно чтобы к ссылке link применилось действие команды transform:rotate а также выравнивание по центру **/
-    justify-content: center
+    /** чтобы включить в действие псевдоэлемент **/
     align-items: center
-    /** выравнивание по центру **/
-    background-color: $dark
-    /** фоновый цвет для блока instagram **/
-    &__link
-      display: flex
-      /** чтобы включить в действие псевдоэлемент **/
-      align-items: center
-      /** выравнивание по горизонтали **/
-      text-transform: uppercase
-      /** заглавне буквы **/
-      text-decoration: none
-      /** убираем нижнее подчеркивание **/
-      color: $primary
-      /** цвет текста **/
-      transform: rotate(90deg)
-      /** поворот элемента на 90 градусов **/
-      line-height: 0.8
-      /** делаем высоту строки 0.8 чтобы псевдоэлемент стал ровно по середине **/
-      &::after
-        /** псевдоэлемент **/
-        content: ''
-        /** самы глав. элемент без которго не может сущ. псевдоэлемент **/
-        width: 50px
-        height: 1px
-        /** задаем ширину и высоту псевдоэлемента **/
-        background-color: $primary
-        /** цвет псевдоэлемента **/
-        margin-left: 8px
-        /** отодвигаем псевдоэлемент от ссылки **/
+    /** выравнивание по горизонтали **/
+    text-transform: uppercase
+    /** заглавне буквы **/
+    text-decoration: none
+    /** убираем нижнее подчеркивание **/
+    color: $primary
+    /** цвет текста **/
+    transform: rotate(90deg)
+    /** поворот элемента на 90 градусов **/
+    line-height: 0.8
+    /** делаем высоту строки 0.8 чтобы псевдоэлемент стал ровно по середине **/
+    font-size: 15px
+    /** размер шрифта для per_pix **/
+    font-weight: normal
+    /** редакция шрифта для per_pix **/
+    &::after
+      /** псевдоэлемент **/
+      content: ''
+      /** самы глав. элемент без которго не может сущ. псевдоэлемент **/
+      width: 50px
+      height: 1px
+      /** задаем ширину и высоту псевдоэлемента **/
+      background-color: $primary
+      /** цвет псевдоэлемента **/
+      margin-left: 15px
+      /** отодвигаем псевдоэлемент от ссылки **/
 
 
       
-  .title
-    margin: 0
-    /** отключили верхний отступ **/
-    font-family: 'Yeseva One', cursive
-    /** подключаем Google шрифт через ссылку **/
-    text-transform: uppercase
-    /** заглавне буквы **/
-    font-size: 40px
-    /** размер шрифта **/
-    &--primary
-      color: $primary
-      /** оформление цвета заголовка **/
+.title
+  margin: 0
+  /** отключили верхний отступ **/
+  font-family: 'Yeseva One', cursive
+  /** подключаем Google шрифт через ссылку **/
+  text-transform: uppercase
+  /** заглавне буквы **/
+  font-size: 40px
+  /** размер шрифта **/
+  line-height: 1.3
+  &--primary
+    color: $primary
+    /** оформление цвета заголовка **/
     
