@@ -371,27 +371,34 @@ body {
   font-size: 14px; }
 
 /** временные св-ва до установки шрифтов **/
-.section-title {
-  text-align: center;
-  /** выровнять заголовок по центру **/
-  text-transform: uppercase;
-  /** заглавные буквы **/
-  font-family: 'Yeseva One', cursive;
-  font-size: 13px;
-  font-weight: normal;
-  /** размер для per_pix **/
-  /** описание псевдоэлементов **/ }
-  .section-title__image {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    /** выравнивание псевдоэлементов **/ }
-    .section-title__image::before, .section-title__image::after {
-      content: '';
-      width: 32px;
-      height: 2px;
-      background-color: #E3B873;
-      margin: 0 10px; }
+img {
+  max-width: 100%; }
+
+/** настройка для всех картинок которая позволяет не вываливаться картинке за пределы ее родителя **/
+.section {
+  padding: 60px 0;
+  /** временный отступ **/ }
+  .section-title {
+    text-align: center;
+    /** выровнять заголовок по центру **/
+    text-transform: uppercase;
+    /** заглавные буквы **/
+    font-family: 'Yeseva One', cursive;
+    font-size: 13px;
+    font-weight: normal;
+    /** размер для per_pix **/
+    /** описание псевдоэлементов **/ }
+    .section-title__image {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      /** выравнивание псевдоэлементов **/ }
+      .section-title__image::before, .section-title__image::after {
+        content: '';
+        width: 32px;
+        height: 2px;
+        background-color: #E3B873;
+        margin: 0 10px; }
 
 .header {
   position: fixed;
@@ -593,6 +600,65 @@ body {
   .title--primary {
     color: #E3B873;
     /** оформление цвета заголовка **/ }
+
+.types__section-title {
+  margin-bottom: 30px; }
+
+.row {
+  display: flex;
+  /** карточки встанут в ряд по горизонтали **/
+  align-items: center;
+  justify-content: space-between;
+  /** выравнивание карточек по центру **/ }
+
+.col {
+  flex-basis: 32%;
+  /** ширина каждой из колонок 32% **/ }
+
+.card__text {
+  position: relative;
+  max-width: 330px;
+  margin: 0 auto;
+  /** варавниваем по центру **/
+  margin-top: -130px;
+  /** карточка заходит на картинку **/
+  padding: 25px 30px;
+  background-color: #fff;
+  box-shadow: 10px 10px 20px rgba(0, 0, 0, 0.03);
+  /** тень **/ }
+
+.card__title {
+  font-family: 'Yeseva One', cursive;
+  /** подключаем Google шрифт через ссылку **/
+  font-size: 18px;
+  margin-top: 0;
+  /** уберем отступ сверху **/
+  margin-bottom: 8px; }
+
+.card__list {
+  padding: 0 0 0 14px;
+  margin: 0;
+  /** сбросим все внутренние и внешние отступы и делаем отступ слева **/
+  font-size: 15px;
+  line-height: 25px;
+  color: #959595;
+  margin-bottom: 36px; }
+
+.card__pricetag {
+  position: absolute;
+  /** это позволит позиционировать элемент относительно родителя card__text т.к. данный элемент имеет значение position: relative **/
+  left: 0;
+  bottom: -20px;
+  /** позиционирование элемента **/
+  font-size: 18px;
+  font-family: Yeseva One;
+  text-transform: uppercase;
+  background-color: #E3B873;
+  /** цвет фона **/
+  color: #fff;
+  /** цвет текста **/
+  padding: 17px 36px;
+  /** внутренние отступы **/ }
 
 @media screen and (max-width: 1300px) {
   .nav__item {
