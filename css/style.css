@@ -660,6 +660,65 @@ img {
   padding: 17px 36px;
   /** внутренние отступы **/ }
 
+.designs__section-title {
+  margin-bottom: 30px; }
+
+.row {
+  display: flex;
+  /** карточки встанут в ряд по горизонтали **/
+  align-items: flex-start;
+  justify-content: space-between;
+  /** выравнивание карточек по центру **/ }
+
+.col {
+  flex-basis: 32%;
+  /** ширина каждой из колонок 32% **/ }
+
+.card__text {
+  position: relative;
+  max-width: 330px;
+  margin: 0 auto;
+  /** варавниваем по центру **/
+  margin-top: -130px;
+  /** карточка заходит на картинку **/
+  padding: 25px 30px;
+  background-color: #fff;
+  box-shadow: 10px 10px 20px rgba(0, 0, 0, 0.03);
+  /** тень **/ }
+
+.card__title {
+  font-family: 'Yeseva One', cursive;
+  /** подключаем Google шрифт через ссылку **/
+  font-size: 18px;
+  margin-top: 0;
+  /** уберем отступ сверху **/
+  margin-bottom: 8px; }
+
+.card__list {
+  padding: 0 0 0 14px;
+  margin: 0;
+  /** сбросим все внутренние и внешние отступы и делаем отступ слева **/
+  font-size: 15px;
+  line-height: 25px;
+  color: #959595;
+  margin-bottom: 36px; }
+
+.card__pricetag {
+  position: absolute;
+  /** это позволит позиционировать элемент относительно родителя card__text т.к. данный элемент имеет значение position: relative **/
+  left: 0;
+  bottom: -20px;
+  /** позиционирование элемента **/
+  font-size: 18px;
+  font-family: Yeseva One;
+  text-transform: uppercase;
+  background-color: #E3B873;
+  /** цвет фона **/
+  color: #fff;
+  /** цвет текста **/
+  padding: 17px 36px;
+  /** внутренние отступы **/ }
+
 @media screen and (max-width: 1300px) {
   .nav__item {
     margin-right: 20px; } }
@@ -685,6 +744,18 @@ img {
     margin-right: 5px; }
   .hero__scroll-down {
     display: none; } }
+
+@media screen and (max-width: 860px) {
+  .row {
+    flex-direction: column;
+    /** выстраивание в колонку **/
+    align-items: center;
+    /** выравнивание по центру **/ }
+    .row .types__card {
+      margin-bottom: 60px; }
+    .row .card__text {
+      margin-left: 0;
+      /** в мобильной версии происходит варивниваине по левой стороне **/ } }
 
 @media screen and (max-width: 800px) {
   .menu__nav {
