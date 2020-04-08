@@ -1,0 +1,62 @@
+.modal
+  position: fixed
+  /** окно должно всплывать поверх всех окон поэтому позиционирование фиксированное **/
+  z-index: 199
+  left: 0
+  top: 0
+  right: 0
+  bottom: 0
+  /** приклеиваем ко всем краям этот блок **/
+  width: 100%
+  height: 100%
+  /** блок должен быть 100% ширины и высоты **/
+  background-color: rgba($dark, 0.6)
+  /** затемнение фона **/
+  display: flex
+  align-items: center
+  justify-content: center
+  /** выравнивание по вертикали и горизонтали **/
+  &__dialog
+    position: relative
+    /** для возможности позиционирования **/
+    max-width: 509px
+    background: $dark url('../img/bg-lines.svg') no-repeat center
+    padding: 33px 49px 27px 
+    color: $light
+  &__close
+    position: absolute
+    right: 0
+    top: 0
+    /** приклеиваем к верхнему правому углу **/
+    width: 28px
+    height: 28px
+    background: transparent url('../img/close.svg') no-repeat center
+    /** на фон ставим картинку с прозрачным фоном без повторений в центре **/
+    border: none
+    /** убираем рамку **/
+    margin: 12px
+    /** задаем отступы **/
+    cursor: pointer
+    /** замена стрелки на палец **/
+  &__title
+    font-family: 'Yeseva One', cursive
+    font-size: 19px
+    text-align: center
+    margin: 0
+    /** отключить лишние отступы **/
+    margin-bottom: 34px
+  &__form
+    display: flex
+    flex-direction: column
+  &__input
+    margin-bottom: 48px
+    &:last-of-type
+      margin-bottom: 14px 
+    /** уменьшить последний отступ **/
+  &__policy
+    margin-bottom: 30px
+  &__button
+    align-self: flex-end
+
+
+  

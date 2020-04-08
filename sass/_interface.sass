@@ -33,5 +33,42 @@
     /** цвет текста кнопки **/
     padding: 13px 40px
     /** редакция для per_pix **/
-    
+.label
+  font-size: 15px
+  &--light
+    color: rgba($light, 0.5)
+.input
+  background-color: transparent
+  border: none
+  border-bottom: 1px solid rgba(54, 54, 54, 0.3)
+  font-size: 18px
+  color: $light
+  padding: 7px 0
+  &::placeholder
+    color: $light
+.policy
+  &__checkbox
+    opacity: 0
+    /** делаем прозрачным **/
+    visibility: hidden
+    /** скрываем input **/
+    &:checked +
+      .policy__label
+        &::before
+          background: $primary url('../img/check.svg') no-repeat center / 10px
+  &__label
+    display: flex
+    /** для выравнивания checkbox **/
+    align-items: center
+    &::before
+      content: ''
+      width: 18px
+      height: 18px 
+      border: 1px solid $primary
+      border-radius: 1px 
+      cursor: pointer
+      margin-right: 8px
+
+
+
 

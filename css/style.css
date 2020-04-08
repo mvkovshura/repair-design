@@ -354,6 +354,50 @@ template {
     padding: 13px 40px;
     /** редакция для per_pix **/ }
 
+.label {
+  font-size: 15px; }
+  .label--light {
+    color: rgba(255, 255, 255, 0.5); }
+
+.input {
+  background-color: transparent;
+  border: none;
+  border-bottom: 1px solid rgba(54, 54, 54, 0.3);
+  font-size: 18px;
+  color: #fff;
+  padding: 7px 0; }
+  .input::-webkit-input-placeholder {
+    color: #fff; }
+  .input::-moz-placeholder {
+    color: #fff; }
+  .input:-ms-input-placeholder {
+    color: #fff; }
+  .input::-ms-input-placeholder {
+    color: #fff; }
+  .input::placeholder {
+    color: #fff; }
+
+.policy__checkbox {
+  opacity: 0;
+  /** делаем прозрачным **/
+  visibility: hidden;
+  /** скрываем input **/ }
+  .policy__checkbox:checked + .policy__label::before {
+    background: #E3B873 url("../img/check.svg") no-repeat center/10px; }
+
+.policy__label {
+  display: flex;
+  /** для выравнивания checkbox **/
+  align-items: center; }
+  .policy__label::before {
+    content: '';
+    width: 18px;
+    height: 18px;
+    border: 1px solid #E3B873;
+    border-radius: 1px;
+    cursor: pointer;
+    margin-right: 8px; }
+
 .container {
   width: 85%;
   /** ширина экрана **/
@@ -718,6 +762,66 @@ img {
   /** цвет текста **/
   padding: 17px 36px;
   /** внутренние отступы **/ }
+
+.modal {
+  position: fixed;
+  /** окно должно всплывать поверх всех окон поэтому позиционирование фиксированное **/
+  z-index: 199;
+  left: 0;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  /** приклеиваем ко всем краям этот блок **/
+  width: 100%;
+  height: 100%;
+  /** блок должен быть 100% ширины и высоты **/
+  background-color: rgba(19, 19, 19, 0.6);
+  /** затемнение фона **/
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  /** выравнивание по вертикали и горизонтали **/ }
+  .modal__dialog {
+    position: relative;
+    /** для возможности позиционирования **/
+    max-width: 509px;
+    background: #131313 url("../img/bg-lines.svg") no-repeat center;
+    padding: 33px 49px 27px;
+    color: #fff; }
+  .modal__close {
+    position: absolute;
+    right: 0;
+    top: 0;
+    /** приклеиваем к верхнему правому углу **/
+    width: 28px;
+    height: 28px;
+    background: transparent url("../img/close.svg") no-repeat center;
+    /** на фон ставим картинку с прозрачным фоном без повторений в центре **/
+    border: none;
+    /** убираем рамку **/
+    margin: 12px;
+    /** задаем отступы **/
+    cursor: pointer;
+    /** замена стрелки на палец **/ }
+  .modal__title {
+    font-family: 'Yeseva One', cursive;
+    font-size: 19px;
+    text-align: center;
+    margin: 0;
+    /** отключить лишние отступы **/
+    margin-bottom: 34px; }
+  .modal__form {
+    display: flex;
+    flex-direction: column; }
+  .modal__input {
+    margin-bottom: 48px;
+    /** уменьшить последний отступ **/ }
+    .modal__input:last-of-type {
+      margin-bottom: 14px; }
+  .modal__policy {
+    margin-bottom: 30px; }
+  .modal__button {
+    align-self: flex-end; }
 
 @media screen and (max-width: 1300px) {
   .nav__item {
