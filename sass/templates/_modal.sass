@@ -1,6 +1,8 @@
 .modal
   position: fixed
   /** окно должно всплывать поверх всех окон поэтому позиционирование фиксированное **/
+  visibility: hidden
+  /** свойство которое позволяет скрывать объект **/
   z-index: 199
   left: 0
   top: 0
@@ -16,6 +18,11 @@
   align-items: center
   justify-content: center
   /** выравнивание по вертикали и горизонтали **/
+  &--visible
+    opacity: 1
+    /** непрозрачность 100% **/
+    visibility: visible
+    
   &__dialog
     position: relative
     /** для возможности позиционирования **/
