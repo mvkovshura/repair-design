@@ -406,6 +406,20 @@ template {
   margin: auto;
   /** контенер находиться по середине **/ }
 
+.row {
+  display: flex;
+  /** карточки встанут в ряд по горизонтали **/
+  align-items: center;
+  justify-content: space-between;
+  /** выравнивание карточек по центру **/ }
+
+.col-30 {
+  flex-basis: 32%;
+  /** ширина каждой из колонок 32% **/ }
+
+.col-50 {
+  width: 50%; }
+
 *, *:before, *:after {
   box-sizing: border-box; }
 
@@ -422,16 +436,37 @@ img {
 .section {
   padding: 60px 0;
   /** временный отступ **/ }
+  .section--dark {
+    background-color: #131313;
+    color: #fff; }
   .section-title {
     text-align: center;
     /** выровнять заголовок по центру **/
-    text-transform: uppercase;
-    /** заглавные буквы **/
-    font-family: 'Yeseva One', cursive;
-    font-size: 13px;
-    font-weight: normal;
-    /** размер для per_pix **/
     /** описание псевдоэлементов **/ }
+    .section-title--left {
+      text-align: left; }
+    .section-title__heading {
+      font-family: 'Yeseva One', cursive;
+      text-transform: uppercase;
+      font-size: 27px;
+      font-weight: normal;
+      /** размер для per_pix **/
+      line-height: 138%;
+      color: #E3B873; }
+    .section-title__word {
+      display: flex;
+      align-items: center;
+      /** оформление псевдоэлемента **/ }
+      .section-title__word::after {
+        content: '';
+        width: 90px;
+        height: 2px;
+        background-color: #E3B873;
+        margin-left: 30px; }
+    .section-title__text {
+      font-size: 18px;
+      line-height: 29px;
+      max-width: 442px; }
     .section-title__image {
       display: flex;
       justify-content: center;
@@ -525,6 +560,19 @@ img {
     /** будет занимать всю ширину и высоту родителя **/
     background-color: rgba(19, 19, 19, 0.7);
     /** прозрачность псевдоэлемента **/ }
+  .hero::after {
+    content: '';
+    /** пустой **/
+    position: absolute;
+    width: 100%;
+    /** ширина 100% **/
+    left: 0;
+    right: 0;
+    bottom: 0;
+    /** приклеим к низу блока hreo **/
+    height: 48.5px;
+    /** половина высоты кнопки &__scroll-down **/
+    background-color: #131313; }
   .hero__content {
     position: relative;
     /** ставит все содержимое этого элемента перед псевдоэлементом-картинкой **/
@@ -558,6 +606,7 @@ img {
   .hero__scroll-down {
     position: absolute;
     /** чтобы можно было позиционировать относительно hero **/
+    z-index: 3;
     display: flex;
     /** для выравнивания по центру **/
     align-items: center;
@@ -645,19 +694,48 @@ img {
     color: #E3B873;
     /** оформление цвета заголовка **/ }
 
+.swiper-slide {
+  display: flex;
+  flex-wrap: wrap; }
+  .swiper-slide__text {
+    flex-basis: 50%;
+    margin-bottom: 34px;
+    padding-bottom: 30px; }
+  .swiper-slide__heading {
+    font-size: 18px;
+    line-height: 25px;
+    color: #E3B873;
+    font-family: 'Yeseva One', cursive;
+    text-transform: uppercase;
+    margin-bottom: 9px; }
+
+.swiper-pagination-bullet {
+  background-color: rgba(255, 255, 255, 0.3); }
+  .swiper-pagination-bullet-active {
+    background-color: #fff; }
+
+.swiper-button-prev, .swiper-button-next {
+  bottom: 0;
+  top: auto;
+  background-size: 42px;
+  width: 42px;
+  height: 14px; }
+  .swiper-button-prev::after, .swiper-button-next::after {
+    display: none; }
+
+.swiper-button-prev {
+  left: 0;
+  background: url("../img/arrow-prev.svg") no-repeat center; }
+
+.swiper-button-next {
+  background: url("../img/arrow-next.svg") no-repeat center; }
+
+.swiper-container-horizontal > .swiper-pagination-bullets {
+  width: auto;
+  bottom: -2px; }
+
 .types__section-title {
   margin-bottom: 30px; }
-
-.row {
-  display: flex;
-  /** карточки встанут в ряд по горизонтали **/
-  align-items: center;
-  justify-content: space-between;
-  /** выравнивание карточек по центру **/ }
-
-.col {
-  flex-basis: 32%;
-  /** ширина каждой из колонок 32% **/ }
 
 .card__text {
   position: relative;

@@ -26,6 +26,21 @@
     /** будет занимать всю ширину и высоту родителя **/
     background-color: rgba($dark, 0.7)
     /** прозрачность псевдоэлемента **/
+  &::after
+    content: ''
+    /** пустой **/
+    position: absolute
+    width: 100%
+    /** ширина 100% **/
+    left: 0
+    right: 0
+    bottom: 0
+    /** приклеим к низу блока hreo **/
+    height: 48.5px
+    /** половина высоты кнопки &__scroll-down **/
+    background-color: $dark
+
+
   &__content
     position: relative
     /** ставит все содержимое этого элемента перед псевдоэлементом-картинкой **/
@@ -59,6 +74,7 @@
   &__scroll-down
     position: absolute
     /** чтобы можно было позиционировать относительно hero **/
+    z-index: 3
     display: flex
     /** для выравнивания по центру **/
     align-items: center
