@@ -388,7 +388,8 @@ template {
 .policy__label {
   display: flex;
   /** для выравнивания checkbox **/
-  align-items: center; }
+  align-items: center;
+  font-size: 16px; }
   .policy__label::before {
     content: '';
     width: 18px;
@@ -397,6 +398,8 @@ template {
     border-radius: 1px;
     cursor: pointer;
     margin-right: 8px; }
+  .policy__label--center {
+    justify-content: center; }
 
 .container {
   width: 85%;
@@ -928,6 +931,51 @@ img {
   /** цвет текста **/
   padding: 17px 36px;
   /** внутренние отступы **/ }
+
+.section-title__text--designs {
+  max-width: 741px;
+  text-align: center;
+  margin: auto;
+  font-family: 'Futura Book', sans-serif;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 20px;
+  line-height: 27px; }
+
+.footer-wrap {
+  background-color: #181818;
+  max-width: 883px;
+  margin: auto;
+  padding: 35px; }
+
+.footer__title {
+  text-transform: uppercase;
+  font-family: 'Yeseva One', cursive;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 20px;
+  text-align: center;
+  margin-bottom: 45px; }
+
+.footer__form {
+  display: flex;
+  flex-wrap: wrap; }
+
+.footer__input-group {
+  display: flex;
+  flex-direction: column;
+  flex-basis: 50%;
+  margin-bottom: 30px; }
+  .footer__input-group--full-width {
+    flex-basis: 100%;
+    /** для того чтобы элемент занял всю строку **/ }
+
+.footer__policy {
+  flex-basis: 100%;
+  margin-bottom: 30px; }
+
+.footer__button {
+  margin: auto; }
 
 .modal {
   position: fixed;
