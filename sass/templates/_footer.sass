@@ -1,8 +1,13 @@
 .footer
-  &-wrap
+  background: $dark url('../img/footer-bg.jpg') no-repeat center / cover
+  padding-top: 30px
+  &__wrap
     background-color: $black
     max-width: 883px
     margin: auto
+    margin-top: -300px
+    /** поднять окно на верх **/
+    margin-bottom: 52px
     padding: 35px
   &__title
     text-transform: uppercase
@@ -15,17 +20,29 @@
   &__form
     display: flex
     flex-wrap: wrap
-  &__input-group
-    display: flex
-    flex-direction: column
-    flex-basis: 50%
-    margin-bottom: 30px
-    &--full-width
-      flex-basis: 100%
-      /** для того чтобы элемент занял всю строку **/
+    justify-content: space-between
+    max-width: 520px
+    /** максимальная ширина формы **/
+    margin: auto
+  &__input
+    padding-top: 4px
+    &-group
+      display: flex
+      flex-direction: column
+      flex-basis: 45%
+      margin-bottom: 45px
+      &--full-width
+        flex-basis: 100%
+        /** для того чтобы элемент занял всю строку **/
+        margin-bottom: 28px
   &__policy
     flex-basis: 100%
-    margin-bottom: 30px
+    margin-bottom: 50px
   &__button
     margin: auto
-      
+    /** выравнивание кнопки **/
+    padding: 18px 65px
+  &__menu
+    background-color: $dark
+    padding: 60px 0
+

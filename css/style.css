@@ -401,6 +401,15 @@ template {
   .policy__label--center {
     justify-content: center; }
 
+label.invalid {
+  color: tomato; }
+
+input.invalid {
+  border-bottom: 1px solid tomato; }
+
+.control__input--dark {
+  color: #131313; }
+
 .container {
   width: 85%;
   /** ширина экрана **/
@@ -873,8 +882,11 @@ img {
   padding: 17px 36px;
   /** внутренние отступы **/ }
 
-.designs__section-title {
-  margin-bottom: 30px; }
+.designs {
+  padding-bottom: 400px;
+  /** временный отступ для верстки макета**/ }
+  .designs__section-title {
+    margin-bottom: 30px; }
 
 .row {
   display: flex;
@@ -942,40 +954,53 @@ img {
   font-size: 20px;
   line-height: 27px; }
 
-.footer-wrap {
-  background-color: #181818;
-  max-width: 883px;
-  margin: auto;
-  padding: 35px; }
-
-.footer__title {
-  text-transform: uppercase;
-  font-family: 'Yeseva One', cursive;
-  font-style: normal;
-  font-weight: normal;
-  font-size: 20px;
-  text-align: center;
-  margin-bottom: 45px; }
-
-.footer__form {
-  display: flex;
-  flex-wrap: wrap; }
-
-.footer__input-group {
-  display: flex;
-  flex-direction: column;
-  flex-basis: 50%;
-  margin-bottom: 30px; }
-  .footer__input-group--full-width {
+.footer {
+  background: #131313 url("../img/footer-bg.jpg") no-repeat center/cover;
+  padding-top: 30px; }
+  .footer__wrap {
+    background-color: #181818;
+    max-width: 883px;
+    margin: auto;
+    margin-top: -300px;
+    /** поднять окно на верх **/
+    margin-bottom: 52px;
+    padding: 35px; }
+  .footer__title {
+    text-transform: uppercase;
+    font-family: 'Yeseva One', cursive;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 20px;
+    text-align: center;
+    margin-bottom: 45px; }
+  .footer__form {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    max-width: 520px;
+    /** максимальная ширина формы **/
+    margin: auto; }
+  .footer__input {
+    padding-top: 4px; }
+    .footer__input-group {
+      display: flex;
+      flex-direction: column;
+      flex-basis: 45%;
+      margin-bottom: 45px; }
+      .footer__input-group--full-width {
+        flex-basis: 100%;
+        /** для того чтобы элемент занял всю строку **/
+        margin-bottom: 28px; }
+  .footer__policy {
     flex-basis: 100%;
-    /** для того чтобы элемент занял всю строку **/ }
-
-.footer__policy {
-  flex-basis: 100%;
-  margin-bottom: 30px; }
-
-.footer__button {
-  margin: auto; }
+    margin-bottom: 50px; }
+  .footer__button {
+    margin: auto;
+    /** выравнивание кнопки **/
+    padding: 18px 65px; }
+  .footer__menu {
+    background-color: #131313;
+    padding: 60px 0; }
 
 .modal {
   position: fixed;
@@ -1034,8 +1059,11 @@ img {
     display: flex;
     flex-direction: column; }
   .modal__input {
-    margin-bottom: 48px;
     /** уменьшить последний отступ **/ }
+    .modal__input-group {
+      display: flex;
+      flex-direction: column;
+      margin-bottom: 48px; }
     .modal__input:last-of-type {
       margin-bottom: 14px; }
   .modal__policy {
