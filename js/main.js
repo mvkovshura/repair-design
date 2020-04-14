@@ -54,13 +54,16 @@ $(document).ready(function () {
   $('.modal__form').validate({
     errorClass: "invalid",
     rules: {
-      // строчное правило
+      // правило-объект (блок)
       userName: {
         required: true,
         minlength: 2,
         maxlength: 15
       },
-      userPhone: "required",
+      userPhone: {
+        required: true,
+        minlength: 17
+      },
       // правило-объект (блок)
       userEmail: {
         required: true,
@@ -75,7 +78,7 @@ $(document).ready(function () {
       },
       userPhone: "Телефон обязателен",
       userEmail: {
-        required: "Обязательно укажите email ",
+        required: "Обязательно укажите email",
         email: "Введите в формате: name@domain.com"
       }
     }
@@ -94,7 +97,10 @@ $(document).ready(function () {
         maxlength: 15
       },
       // строчное правило
-      userPhoneFooter: "required",
+      userPhoneFooter: {
+        required: true,
+        minlength: 17
+      },
       // правило-объект (блок)
       userQuestion: "required"
     }, //сообщения
@@ -124,7 +130,10 @@ $(document).ready(function () {
         maxlength: 15
       },
       // строчное правило
-      userPhoneControl: "required"
+      userPhoneControl: {
+        required: true,
+        minlength: 17
+      }
     }, //сообщения
     messages: {
       userNameControl: {
