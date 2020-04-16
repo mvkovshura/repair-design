@@ -331,6 +331,7 @@ template {
   font-size: 13.7px;
   /** размер шрифта **/ }
   .button:hover {
+    cursor: pointer;
     /** при наведении стрелка курсора меняется на палец **/ }
   .button--primary {
     background-color: #E3B873;
@@ -1001,6 +1002,40 @@ img {
   .footer__menu {
     background-color: #131313;
     padding: 60px 0; }
+  .footer__map {
+    margin: auto;
+    margin-bottom: 65px;
+    max-width: 925px;
+    max-height: 465px; }
+  .footer__adress {
+    max-width: 520px;
+    margin: auto;
+    margin-bottom: 10px;
+    font-family: 'Yeseva One', cursive;
+    color: #E3B873;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 17px;
+    line-height: 28px;
+    text-align: center;
+    text-transform: uppercase; }
+  .footer__social {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 45px; }
+  .footer__email-icon {
+    margin-right: 15px;
+    width: 28px;
+    height: 28px;
+    border-radius: 50px;
+    background: #E3B873 url("../img/email-icon.svg") no-repeat center; }
+  .footer__instagram-icon {
+    margin-right: 15px;
+    width: 28px;
+    height: 28px;
+    border-radius: 50px;
+    background: #E3B873 url("../img/instagram-icon.svg") no-repeat center; }
 
 .modal {
   position: fixed;
@@ -1058,14 +1093,13 @@ img {
   .modal__form {
     display: flex;
     flex-direction: column; }
-  .modal__input {
+  .modal__input-group {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 48px; }
+  .modal__input:last-of-type {
+    margin-bottom: 14px;
     /** уменьшить последний отступ **/ }
-    .modal__input-group {
-      display: flex;
-      flex-direction: column;
-      margin-bottom: 48px; }
-    .modal__input:last-of-type {
-      margin-bottom: 14px; }
   .modal__policy {
     margin-bottom: 30px; }
   .modal__button {
