@@ -50,7 +50,7 @@ $(document).ready(function () {
 
   new WOW().init();
 
-/* валидация формы */
+  /* валидация формы */
   $('.modal__form').validate({
     errorClass: "invalid",
     rules: {
@@ -81,6 +81,23 @@ $(document).ready(function () {
         required: "Обязательно укажите email",
         email: "Введите в формате: name@domain.com"
       }
+    },
+    submitHandler: function(form) {
+      $.ajax({
+        type: "POST",
+        url: "send.php",
+        data: $(form).serialize(),
+        success: function (response) {
+          console.log('Ajax сработал. Ответ сервера: ' + response);
+          alert('Форма отправлена, мы свяжемся с вами через 10 мин');
+          $(form)[0].reset();
+          modal.removeClass('modal--visible');
+        },
+        error: function (response) {
+          console.error('Ошибка запроса' + response);
+
+        }
+      });
     }
   });
   // маска для номера телефона
@@ -114,6 +131,22 @@ $(document).ready(function () {
       userQuestion: {
         required: "Обязательно напишите ваш вопрос"
       }
+    },
+    submitHandler: function(form) {
+      $.ajax({
+        type: "POST",
+        url: "sendFooter.php",
+        data: $(form).serialize(),
+        success: function (response) {
+          console.log('Ajax сработал. Ответ сервера: ' + response);
+          alert('Форма отправлена, мы свяжемся с вами через 10 мин');
+          $(form)[0].reset();
+          modal.removeClass('modal--visible');
+        },
+        error: function (response) {
+          console.error('Ошибка запроса' + response);
+        }
+      });
     }
   });
   // маска для номера телефона
@@ -145,10 +178,42 @@ $(document).ready(function () {
       userQuestion: {
         required: "Обязательно напишите ваш вопрос"
       }
+    },
+    submitHandler: function(form) {
+      $.ajax({
+        type: "POST",
+        url: "sendControl.php",
+        data: $(form).serialize(),
+        success: function (response) {
+          console.log('Ajax сработал. Ответ сервера: ' + response);
+          alert('Форма отправлена, мы свяжемся с вами через 10 мин');
+          $(form)[0].reset();
+          modal.removeClass('modal--visible');
+        },
+        error: function (response) {
+          console.error('Ошибка запроса' + response);
+        }
+      });
     }
   });
   // маска для номера телефона
   $('[type=tel]').mask('+7(000) 00-00-000', {placeholder: "+7(___) __-__-___"});
-  
+
+  // видео с ютуба
+  var player;
+  $('.video__play').on('click', function onYouTubeIframeAPIReady() {
+    player = new YT.Player('player', {
+      height: '460',
+      width: '100%',
+      videoId: 'RHzzLqJWqHs',
+      events: {
+        'onReady': videoPlay,
+      }
+    });
+  })
+  function videoPlay(event) {
+    event.target.playVideo();
+  }
+
 
 });

@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ru">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -178,22 +178,23 @@
           <!-- /.section-title__image -->
         </div>
         <!-- /.section-title -->
-        <div class="control__video video">
+        <div class="control__video video" id="player">
+          <script src="https://www.youtube.com/iframe_api"></script>
            <img src="img/play-icon.svg" alt="play icon" class="video__play">
         </div>
         <!-- /.control__video video -->
         <p class="control__text">
           На каждом объекте установлена ​​камера, которая транслирует ход работы на часах. В любой момент вы можете зайти на наш сайт и следить за ходом работы в вашей квартире. Посмотрите прямую трансляцию с одного из наших объектов! Оставьте заявку ниже чтобы получить ссылку на трансляцию.
         </p>
-        <form action="#" class="form control__form wow slideInLeft">
+        <form action="sendControl.php" class="form control__form wow slideInLeft">
           <div class="control__input-group">
-            <label for="user-name" class="label form__label control__label">Имя</label>
-            <input type="text" name="userNameControl" class="input form__input control__input--dark" id="user-name" placeholder="Как вас зовут:">
+            <label for="user-name-control" class="label form__label control__label">Имя</label>
+            <input type="text" name="userNameControl" class="input form__input control__input--dark" id="user-name-control" placeholder="Как вас зовут:">
           </div>
           <!-- /.input-group -->
           <div class="control__input-group">
-            <label for="user-phone" class="label form__label control__label">Телефон</label>
-            <input type="tel" name="userPhoneControl" class="input form__input control__input--dark" id="user-phone" placeholder="Ваш номер телефона:">
+            <label for="user-phone-control" class="label form__label control__label">Телефон</label>
+            <input type="tel" name="userPhoneControl" class="input form__input control__input--dark" id="user-phone-control" placeholder="Ваш номер телефона:">
           </div>
           <!-- /.input-group -->
           <button class="button button--primary control__button">Отправить</button>
@@ -459,14 +460,14 @@
     <div class="container">
       <div class="footer__wrap">
         <h3 class="footer__title">Остались вопросы?</h3>
-        <form action="#" class="form footer__form">
+        <form action="sendFooter.php" class="form footer__form">
           <div class="input-group footer__input-group">
-            <label for="user-name" class="label form__label label--light">Имя</label>
-            <input type="text" name="userNameFooter" class="input form__input footer__input input--light" id="user-name" placeholder="Как вас зовут:">
+            <label for="user-name-footer" class="label form__label label--light">Имя</label>
+            <input type="text" name="userNameFooter" class="input form__input footer__input input--light" id="user-name-footer" placeholder="Как вас зовут:">
           </div>
           <div class="input-group footer__input-group">
-            <label for="user-phone" class="label form__label label--light">Телефон</label>
-            <input type="tel" name="userPhoneFooter" class="input form__input footer__input input--light" id="user-phone" placeholder="Ваш номер телефона:">
+            <label for="user-phone-footer" class="label form__label label--light">Телефон</label>
+            <input type="tel" name="userPhoneFooter" class="input form__input footer__input input--light" id="user-phone-footer" placeholder="Ваш номер телефона:">
           </div>
           <div class="input-group footer__input-group footer__input-group--full-width">
             <label for="user-question" class="label form__label label--light ">Вопрос</label>
@@ -492,10 +493,6 @@
         <a href="mailto:111@yandex.ru" class="footer__email-icon"></a>
         <a href="#" class="footer__instagram-icon"></a>
       </div>
-
-
-
-
       <div class="map footer__map">
         <script type="text/javascript" charset="utf-8" async src="https://api-maps.yandex.ru/services/constructor/1.0/js/?um=constructor%3A5e2893dd6f2286d06f2ac71053952c1f17840491a9552503fd0368ad39176023&amp;width=100%25&amp;height=465&amp;lang=ru_RU&amp;scroll=false"></script>
       </div>
@@ -530,12 +527,11 @@
   </footer>
   <!-- /.footer section section--dark -->
 
-
   <div class="modal">
     <div class="modal__dialog">
       <button class="modal__close"></button>
       <h3 class="modal__title">Оставьте заявку и наш менеджер свяжется с вами</h3>
-      <form action="#" class="form modal__form">
+      <form action="send.php" method="POST" class="form modal__form">
         <div class="input-group modal__input-group">
           <label for="user-name" class="label form__label label--light">Имя</label>
           <input type="text" name="userName" class="input form__input modal__input input--light" id="user-name" placeholder="Как вас зовут:">
@@ -560,7 +556,10 @@
     <!-- /.modal__dialog само окно-->
   </div>
   <!-- /.modal блок окна-->
-  <script src="https://code.jquery.com/jquery-3.4.1.slim.js"></script>
+  <script
+  src="https://code.jquery.com/jquery-3.5.0.min.js"
+  integrity="sha256-xNzN2a4ltkB44Mc/Jz3pT4iU1cmeR0FkXs4pru/JxaQ="
+  crossorigin="anonymous"></script>
   <!-- сначала подключаем библиотеку jquery -->
   <script src="https://unpkg.com/swiper/js/swiper.min.js"></script>
   <!-- подключаем swiper -->

@@ -833,7 +833,8 @@ img {
   position: relative;
   /** это свойство выводит кнопку play  вперед на первый план перед затемненны фоном **/
   margin: auto;
-  /** для выравнивания по центру **/ }
+  /** для выравнивания по центру **/
+  cursor: pointer; }
 
 .types__section-title {
   margin-bottom: 30px; }
